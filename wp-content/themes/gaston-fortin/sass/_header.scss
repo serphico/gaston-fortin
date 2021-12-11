@@ -1,0 +1,124 @@
+header {
+     width: 80%;
+     height: 5rem;
+     color: white;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     align-items: center;
+     position: relative;
+     border-bottom: solid 1px white;
+     margin: 0 auto;
+
+     img {
+        width: 15%;
+     }
+
+     nav {
+          width: 30%;
+          ul {
+               display: flex;
+               flex-direction: row;
+               justify-content: space-between;
+               li{
+                    list-style: none !important;
+                    cursor: pointer;
+                a{
+                    text-decoration: none;
+                    color: white;
+
+
+                }
+               }
+          }
+     }
+
+     .burger {
+          display: none;
+     }
+}
+
+@media screen and (max-width: 500px){
+     header{
+
+     nav {
+          width: 100%;
+          height: 100vh;
+          position: absolute;
+          display: flex;
+          background-color: black;
+          margin: 0 auto;
+          z-index: 100;
+          top: 81%;
+          left: 100%;
+          ul{
+               width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+          }
+     }
+          
+     .burger {
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          cursor: pointer;
+
+          @for $i from 1 through 3 {
+               .linea#{$i} {
+                    width: 50px;
+                    height: 2px;
+                    background-color: white;
+               }
+          }
+
+          .open {
+               margin-bottom: 10px;
+          }
+
+          .close1 {
+               display: none;
+          }
+
+          .close2 {
+               animation-name: closeAnimation2;
+               animation-duration: 0.5s;
+               animation-timing-function: ease-in;
+               animation-fill-mode: forwards;
+
+               @keyframes closeAnimation2 {
+                    from {
+                         margin-bottom: 10px;
+                         transform: rotate(0deg);
+                    }
+                    to {
+                         margin-bottom: 0px;
+                         transform: rotate(45deg);
+                    }
+               }
+          }
+
+          .close3 {
+               animation-name: closeAnimation3;
+               animation-duration: 0.5s;
+               animation-timing-function: ease-in;
+               animation-fill-mode: forwards;
+
+               @keyframes closeAnimation3 {
+                    from {
+                         margin-bottom: 10px;
+                         transform: rotate(0deg);
+                    }
+                    to {
+                         margin-bottom: 0px;
+                         transform: rotate(-45deg);
+                    }
+               }
+          }
+     }
+}
+}
